@@ -18,7 +18,7 @@ What are my ideas based on? Why have I made certain choices? You can read it in 
 
 3. Type<br/>
 ```
-Git clone https://github.com/marissaverdonck/BlokTech_DatingApp.git
+Git clone https://github.com/marissaverdonck/InterMatching.git
 ```
 
 4. Install the dependecies<br/>
