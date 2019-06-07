@@ -1,0 +1,21 @@
+<% include partials/head %>
+
+  <body>
+    <% for (var index = 0; index < data.length; index++) { %>
+
+      <h1>
+        <%=data[index].email%>
+      </h1>
+      <h2>
+        <%=data[index].password%>
+      </h2>
+
+
+
+
+      <% } %>
+
+
+  </body>
+
+  /* Bron: be-course - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/express-server/view/list.ejs */

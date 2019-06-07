@@ -1,0 +1,80 @@
+<% include partials/head %>
+
+  <body>
+
+    <% include partials/header %>
+
+
+      <section id="profile">
+        <a href="search" id="back">
+          < back</a>
+
+            <a href="settings" id="settings">
+              <Img src="images/settings_pink.png" alt="settings">
+            </a>
+            <% if (user) { %>
+              <Img src="upload/<%= user.profilepicture %>" alt="gebruiker">
+              <div>
+                <p>
+                  <%= user.name %>,
+                    <%= user.dateofbirth %>
+                </p>
+                <p>
+                  <%= user.location %>
+                </p>
+
+              </div>
+      </section>
+
+      <section id="your_interests">
+        <h3> Your interests</h3>
+        <a href="changeinterests" id="changeinterests"><img src="images/pen.png" alt="change" title="change interest"></a>
+
+        <article>
+          <img src="upload/<%= user.pictures[0].filename %>" alt="interest climbing " class="interest ">
+          <h4>
+            <%= user.interests[0]%>
+          </h4>
+        </article>
+
+        <article>
+          <img src="upload/<%= user.pictures[1].filename %>" alt="interest ski " class="interest ">
+          <h4>
+            <%= user.interests[1]%>
+          </h4>
+        </article>
+
+        <article>
+          <img src="upload/<%= user.pictures[2].filename %>" alt="interest cooking " class="interest ">
+          <h4>
+            <%= user.interests[2]%>
+          </h4>
+        </article>
+
+        <article>
+          <img src="upload/<%= user.pictures[3].filename %>" alt="mount everest " class="interest ">
+          <h4>
+            <%= user.interests[3]%>
+          </h4>
+        </article>
+
+        <article>
+          <img src="upload/<%= user.pictures[4].filename %>" alt="interest dogs " class="interest ">
+          <h4>
+            <%= user.interests[4]%>
+          </h4>
+        </article>
+
+        <article>
+          <img src="upload/<%= user.pictures[5].filename %>" alt="interest code " class="interest ">
+          <h4>
+            <%= user.interests[5]%>
+          </h4>
+        </article>
+      </section>
+      <% } %>
+        <script type="text/javascript " src="/server.js "></script>
+        <script type="text/javascript " src="script/script.js "></script>
+  </body>
+
+  </html>

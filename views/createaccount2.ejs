@@ -1,0 +1,32 @@
+<% include partials/head %>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="search"><img src="/images/back.png" alt="back"></a>
+          </li>
+          <li>
+            <h2> Create account </h2>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="createaccount">
+      <form method="post" enctype="multipart/form-data">
+        <% include partials/form %>
+          <label for="profilepicture">Choose a profile picture</label>
+          <input type="file" id="profilepicture" name="profilepicture" accept="image/png, image/jpeg" onchange="loadFile(event)" required><br />
+          <img src="images/color.png" alt="gebruiker" id="output"><br />
+          <input id="button" type="submit" name="login" value="Next step" />
+
+          </fieldset>
+      </form>
+    </section>
+
+    <script type="text/javascript" src="/script/index.js"></script>
+  </body>
+
+  </html>

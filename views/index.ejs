@@ -1,0 +1,30 @@
+<% include partials/head %>
+
+  <body>
+    <section id="logo">
+      <img src="images/logo.png" alt="logo_intermatching">
+      <h1>InterMatching</h1>
+    </section>
+
+    <section id="login">
+      <form method="post">
+        <fieldset>
+          <legend></legend>
+          <p>Search for your perfect match based on interests. </p>
+          <label for="email"> E-mail </label>
+          <input id="email" name="email" type="email" placeholder="naam@mail.com" required>
+          <label for="wachtwoord"> Password </label>
+          <input id="password" name="password" type="password" required>
+          <input id="button" type="submit" name="login" value="Login" />
+          <article id="anders">
+            <a href="createaccount1"> > Create an account</a>
+            <a href="createaccount1"> > Forgot your Password?</a></article>
+        </fieldset>
+      </form>
+    </section>
+
+    <script type="text/javascript" src="/server.js"></script>
+
+  </body>
+
+  </html>

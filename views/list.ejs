@@ -1,0 +1,31 @@
+<% include partials/head %>
+
+  <body>
+    <% for (var index = 0; index < data.length; index++) { %>
+
+      <h4> E-mail:
+        <%=data[index].email%>
+          </>
+          <p>
+            <%=data[index].name%>
+          </p>
+          <p>
+            <%=data[index].dateofbirth%>
+          </p>
+          <p>
+            <%=data[index].location%>
+          </p>
+          <p>
+            <%=data[index].gender%>
+          </p>
+          <p>
+            <%=data[index].orientation%>
+          </p>
+          <p>
+            <%=data[index].agefrom%>
+          </p>
+          <p>
+            <%=data[index].agetill%>
+          </p>
+          <% } %>
+  </body>
