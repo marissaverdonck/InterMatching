@@ -61,7 +61,7 @@ db
 Create an .env file with the following content:
 
 ```
-DB_HOST=mongodb+srv://kcnodrev:example@intermatching-c2uy6.mongodb.net/test
+DB_HOST=mongodb+srv://<username>:<password>@intermatching-c2uy6.mongodb.net/test
 DB_USER=root
 DB_PORT=27017
 DB_NAME=InterMatching
