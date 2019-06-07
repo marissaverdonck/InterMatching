@@ -40,7 +40,7 @@ Open a new terminaltab and start Mongodb
 ```
 mongod
 ```
-Make an .env file 
+Create an .env file with the following content:
 
 ```
 DB_HOST=mongodb+srv://kcnodrev:example@intermatching-c2uy6.mongodb.net/test
