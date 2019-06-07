@@ -40,6 +40,16 @@ Open a new terminaltab and start Mongodb
 ```
 mongod
 ```
+Make an .env file 
+
+```
+DB_HOST=mongodb+srv://kcnodrev:example@intermatching-c2uy6.mongodb.net/test
+DB_USER=root
+DB_PORT=27017
+DB_NAME=InterMatching
+DB_PASSWORD=mypassword
+SESSION_SECRET=ilike...
+```
 
 ## Database structure
 
