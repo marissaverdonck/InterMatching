@@ -40,6 +40,24 @@ Open a new terminaltab and start Mongodb
 ```
 mongod
 ```
+
+Create an .gitignore file with the following content:
+
+```
+node_modules
+package-lock.json
+.DS_Store
+.vscode
+.eslintrc.js
+/static/upload/*
+!*.gitkeep
+*/.DS_Store
+**/.DS_Store
+.env
+db
+```
+
+
 Create an .env file with the following content:
 
 ```
@@ -50,6 +68,8 @@ DB_NAME=InterMatching
 DB_PASSWORD=mypassword
 SESSION_SECRET=ilike...
 ```
+
+
 
 ## Database structure
 
