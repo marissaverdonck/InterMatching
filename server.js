@@ -9,6 +9,10 @@ const multer = require('multer');
 const find = require('array-find');
 const mongo = require('mongodb');
 const session = require('express-session');
+
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -72,7 +76,7 @@ app.post('/settings', changeSettings);
 app.use(notfound);
 app.listen(process.env.PORT);
 
-/* 
+/*
 Open in browser: http://localhost:3000
 Bronnen:
 dandevri, 2019- mongodb-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/mongodb-server/index.js
