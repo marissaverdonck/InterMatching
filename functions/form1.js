@@ -9,6 +9,8 @@ const multer = require('multer');
 const find = require('array-find');
 const mongo = require('mongodb');
 const session = require('express-session');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -22,10 +24,12 @@ mongo.MongoClient.connect(url, function(err, client) {
 // Function
 function form1(req, res) {
   var id = slug(req.body.email).toLowerCase();
+  var pwd = req.body.password;
+  var hash = bcrypt.hashSync(pwd, saltRounds);
   db.collection('data').insertOne({
     id: id,
     email: req.body.email,
-    password: req.body.password
+    password: hash
   }, done)
 
   function done(err, data) {
@@ -34,7 +38,7 @@ function form1(req, res) {
     } else {
       //Redirects the browser to the given path
       res.redirect('/createaccount2' + data.insertedId)
-      console.log(data.insertedId)
+      console.log(data)
     }
   }
 }
