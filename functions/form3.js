@@ -37,8 +37,8 @@ function form3(req, res) {
       next(err)
     } else {
       //Redirects the browser to the given path
+      req.session.user = data;
       res.redirect('/search')
-      console.log('test')
     }
   }
 }
