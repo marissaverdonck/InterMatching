@@ -23,11 +23,9 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function form1(req, res) {
-  var id = slug(req.body.email).toLowerCase();
   var pwd = req.body.password;
   var hash = bcrypt.hashSync(pwd, saltRounds);
   db.collection('data').insertOne({
-    id: id,
     email: req.body.email,
     password: hash
   }, done)
@@ -36,9 +34,8 @@ function form1(req, res) {
     if (err) {
       next(err)
     } else {
-      //Redirects the browser to the given path
+      req.session.user = {id: data.ops[0]._id}
       res.redirect('/createaccount2' + data.insertedId)
-      console.log(data)
     }
   }
 }

@@ -30,6 +30,7 @@ const createaccount2 = require('./functions/createaccount2');
 const createaccount3 = require('./functions/createaccount3');
 const changeinterests = require('./functions/changeinterests');
 const user1 = require('./functions/user1');
+const user = require('./functions/user');
 const itsamatch = require('./functions/itsamatch');
 const welcome = require('./functions/welcome');
 const search = require('./functions/search');
@@ -58,6 +59,7 @@ app.set('views', 'views');
 app.get('/', welcome);
 app.get('/notifications', notifications)
 app.get('/profile', profile);
+app.get('/profile/:id', user);
 app.get('/search', search);
 app.get('/settings', settings);
 app.get('/createaccount1', createaccount1);

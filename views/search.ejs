@@ -3,135 +3,145 @@
   <body>
 
     <% include partials/header %>
-
+    <% if(user){ %>
       <section id="matches" class="show">
-        <h3>Matches</h3>
-        <div>
+          <h3>Matches</h3>
+          <div>
 
-          <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
-            </a>
-          </article>
+            <article>
+              <a href="user1">
+                <img src="images/boy_square.png" alt="gebruiker">
+                <p>Jeroen</p>
+              </a>
+            </article>
 
-          <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
-            </a>
-          </article>
+            <article>
+              <a href="user1">
+                <img src="images/boy_square.png" alt="gebruiker">
+                <p>Jeroen</p>
+              </a>
+            </article>
 
-          <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
-            </a>
-          </article>
+            <article>
+              <a href="user1">
+                <img src="images/boy_square.png" alt="gebruiker">
+                <p>Jeroen</p>
+              </a>
+            </article>
 
-          <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
-            </a>
-          </article>
+            <article>
+              <a href="user1">
+                <img src="images/boy_square.png" alt="gebruiker">
+                <p>Jeroen</p>
+              </a>
+            </article>
 
-          <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
-            </a>
-          </article>
+            <article>
+              <a href="user1">
+                <img src="images/boy_square.png" alt="gebruiker">
+                <p>Jeroen</p>
+              </a>
+            </article>
 
-          <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
-            </a>
-          </article>
-        </div>
+            <article>
+              <a href="user1">
+                <img src="images/boy_square.png" alt="gebruiker">
+                <p>Jeroen</p>
+              </a>
+            </article>
+          </div>
       </section>
 
       <section id="interesses">
-        <h3> Interests</h3>
-        <p> We create matches with interests. Which interests does your dream match have? Choose the one you like and get matched! </p>
+          <h3> Interests</h3>
+          <p> We create matches with interests. Which interests does your dream match have? Choose the one you like and get matched! </p>
 
-        <article>
-          <img src="images/climbing.png" alt="interest climbing" class="interest">
-          <h4>Climbing</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+          <article>
+            <img src="images/climbing.png" alt="interest climbing" class="interest">
+            <h4>Climbing</h4>
+            <div>
+              <input name="like" id="like" type="radio" value="like" />
+              <input name="like" id="dislike" type="radio" value="dislike" />
+            </div>
+          </article>
 
-        <article>
-          <img src="images/ski.png" alt="interest ski" class="interest">
-          <h4>Ski</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+          <article>
+            <img src="images/ski.png" alt="interest ski" class="interest">
+            <h4>Ski</h4>
+            <div>
+              <input name="like" id="like" type="radio" value="like" />
+              <input name="like" id="dislike" type="radio" value="dislike" />
+            </div>
+          </article>
 
-        <article>
-          <img src="images/cooking.png" alt="interest cooking" class="interest">
-          <h4>Cooking</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+          <article>
+            <img src="images/cooking.png" alt="interest cooking" class="interest">
+            <h4>Cooking</h4>
+            <div>
+              <input name="like" id="like" type="radio" value="like" />
+              <input name="like" id="dislike" type="radio" value="dislike" />
+            </div>
+          </article>
 
-        <article>
-          <img src="images/mounteverest.png" alt="mount everest" class="interest">
-          <h4>Climb Mount everest</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+          <article>
+            <img src="images/mounteverest.png" alt="mount everest" class="interest">
+            <h4>Climb Mount everest</h4>
+            <div>
+              <input name="like" id="like" type="radio" value="like" />
+              <input name="like" id="dislike" type="radio" value="dislike" />
+            </div>
+          </article>
 
-        <article>
-          <img src="images/dog.png" alt="interest dogs" class="interest">
-          <h4>Dogs</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+          <article>
+            <img src="images/dog.png" alt="interest dogs" class="interest">
+            <h4>Dogs</h4>
+            <div>
+              <input name="like" id="like" type="radio" value="like" />
+              <input name="like" id="dislike" type="radio" value="dislike" />
+            </div>
+          </article>
 
-        <article>
-          <img src="images/code.png" alt="interest code" class="interest">
-          <h4>Code</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+          <article>
+            <img src="images/code.png" alt="interest code" class="interest">
+            <h4>Code</h4>
+            <div>
+              <input name="like" id="like" type="radio" value="like" />
+              <input name="like" id="dislike" type="radio" value="dislike" />
+            </div>
+          </article>
 
-        <article>
-          <img src="images/mtb.png" class="interest" alt="interest mountainbike" class="interest">
-          <h4>Mountainbike</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+          <article>
+            <img src="images/mtb.png" class="interest" alt="interest mountainbike" class="interest">
+            <h4>Mountainbike</h4>
+            <div>
+              <input name="like" id="like" type="radio" value="like" />
+              <input name="like" id="dislike" type="radio" value="dislike" />
+            </div>
+          </article>
 
-        <article>
-          <img src="images/guitar.png" alt="interest guitar" class="interest">
-          <h4>Play guitar</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+          <article>
+            <img src="images/guitar.png" alt="interest guitar" class="interest">
+            <h4>Play guitar</h4>
+            <div>
+              <input name="like" id="like" type="radio" value="like" />
+              <input name="like" id="dislike" type="radio" value="dislike" />
+            </div>
+          </article>
 
       </section>
+    <% } else { %>
+      <section>
+        <br>
+        <br>
+        <br>
+        <br>
+        You're not logged in
+      </section>
+    <% } %>
 
-      <script type="text/javascript" src="/server.js"></script>
-      <script type="text/javascript" src="script/script.js"></script>
+
+      <!-- <script type="text/javascript" src="/server.js"></script>
+      <script type="text/javascript" src="script/script.js"></script> -->
   </body>
 
   </html>

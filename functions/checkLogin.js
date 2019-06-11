@@ -37,8 +37,8 @@ function checkLogin(req, res) {
     } else {
       var result = bcrypt.compareSync(userPassword, data.password);
       if (result) {
-        req.session.user = data;
-        res.redirect('search')
+        req.session.user = {id: data._id};
+        res.redirect('/search')
       } else {
         res.redirect('/');
         console.log('password incorrect');

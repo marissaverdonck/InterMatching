@@ -1,0 +1,36 @@
+<% include partials/head %>
+
+  <body>
+
+    <% include partials/header %>
+
+      <% if(data){ %>
+      <section id="profile">
+        <a href="javascript:history.back()" id="back">
+          < back</a>
+
+            <img src="/upload/<%= data.profilepicture %>" alt="gebruiker">
+            <div>
+              <p><%= data.name %>, 28</p>
+              <p><%= data.location %></p>
+            </div>
+            <button id="contactmatch"><img id="contactmatch" src="/images/buttonheart.png"></button>
+            <button id="contactmatch"><img id="contactmatch"src="/images/buttonhi.png"></button>
+            <button id="contactmatch"><img id="contactmatch"src="/images/buttoncross.png"></button>
+      </section>
+
+      <section id="user_interests">
+        <h3> User interests</h3>
+        <% for(var i=0; i<6; i++) {%>
+            <article>
+              <img src="/upload/<%= data.pictures[i].filename %>" alt="interest climbing" class="interest">
+              <h4><%= data.interests[i] %></h4>
+            </article>
+        <% } %>
+      </section>
+
+      <% } %>
+
+  </body>
+
+  </html>
