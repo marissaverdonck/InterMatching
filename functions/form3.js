@@ -37,7 +37,7 @@ function form3(req, res) {
       next(err)
     } else {
       //Redirects the browser to the given path
-      res.redirect('/')
+      res.redirect('/search')
     }
   }
 }
