@@ -70,7 +70,7 @@ app.post('/createaccount3' + ':id', upload.any(), form3);
 app.post('/', checkLogin);
 app.post('/settings', changeSettings);
 app.use(notfound);
-app.listen(port, listen)
+app.listen(process.env.PORT);
 
 /* 
 Open in browser: http://localhost:3000
