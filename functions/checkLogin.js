@@ -32,7 +32,8 @@ function checkLogin(req, res) {
   function done(err, data) {
     if (err) {
       next(err)
-    } if (!data){
+    }
+    if (!data) {
       console.log("No user found with this email")
     } else {
       var result = bcrypt.compareSync(userPassword, data.password);

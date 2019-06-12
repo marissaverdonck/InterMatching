@@ -27,7 +27,7 @@ function settings(req, res) {
     if (err) {
       next(err)
     } else {
-      res.render('settings', { data: data, user: req.session.user })
+      res.render('settings', { data: data, user: req.session.user, title: "Settings" })
     }
   }
 }
