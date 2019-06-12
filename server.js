@@ -9,6 +9,7 @@ const multer = require('multer');
 const find = require('array-find');
 const mongo = require('mongodb');
 const session = require('express-session');
+const expressValidator = require('express-validator');
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -18,6 +19,30 @@ mongo.MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) 
     throw err
   db = client.db(process.env.DB_NAME)
 });
+
+//global variables
+app.use(function(req, res, next) {
+  res.locals.errors = null;
+  next();
+});
+
+// Express validator middleware
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+    let namespace = param.split('.')
+    , root = namespace.shift()
+    , formParam = root;
+
+    while(namespace.lenght) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg : msg,
+      value : value
+    };
+  }
+}));
 
 // Require modules
 const notifications = require('./functions/notifications');

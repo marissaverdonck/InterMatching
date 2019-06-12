@@ -9,6 +9,7 @@ const multer = require('multer');
 const find = require('array-find');
 const mongo = require('mongodb');
 const session = require('express-session');
+const expressValidator = require('express-validator');
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -21,20 +22,39 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function form1(req, res) {
-  var id = slug(req.body.email).toLowerCase();
-  db.collection('data').insertOne({
-    id: id,
-    email: req.body.email,
-    password: req.body.password
-  }, done)
 
-  function done(err, data) {
-    if (err) {
-      next(err)
-    } else {
-      //Redirects the browser to the given path
-      res.redirect('/createaccount2' + data.insertedId)
-      console.log(data.insertedId)
+  //check if field are empty
+  req.checkBody('email', "This field can't be empty").notEmpty();
+  req.checkBody('password', "You must enter a password").notEmpty();
+
+  //check if input is an email address
+  req.checkBody('email', "You didn't enter an email address").isEmail();
+
+
+  var errors = req.validationErrors();
+
+  if(errors){
+      res.render('createaccount1', {
+      errors: errors
+    });
+  } else{
+    var id = slug(req.body.email).toLowerCase();
+    db.collection('data').insertOne({
+      id: id,
+      email: req.body.email,
+      password: req.body.password
+    }, done)
+
+    function done(err, data) {
+      if (err) {
+        next(err)
+      } else {
+        //Redirects the browser to the given path
+        res.redirect('/createaccount2' + data.insertedId)
+        console.log(data.insertedId)
+      }
+
+      console.log('SUCCES');
     }
   }
 }
