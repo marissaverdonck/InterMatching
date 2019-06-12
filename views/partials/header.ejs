@@ -2,18 +2,24 @@
   <nav>
     <ul>
       <li>
-        <a href="search"><img src="/images/logo.png" alt="logo"></a>
+        <% if (user) { %>
+          <a href="/search"><img src="/images/logo.png" alt="logo"></a>
+        <% } else { %>
+          <a href="/"><img src="/images/logo.png" alt="logo"></a>
+        <% } %>
       </li>
 
       <li>
         <h2> Interests </h2>
       </li>
-      <li>
-        <a href="profile"> <img src="images/person_white.png" alt="profile" title="profile page"></a>
-      </li>
-      <li>
-        <a href="notifications"><img src="images/bell_white.png" alt="notifications" title="notifications page"></a>
-      </li>
+      <% if (user) { %>
+        <li>
+          <a href="profile/<%= user.id %>"> <img src="/images/person_white.png" alt="profile" title="profile page"></a>
+        </li>
+        <li>
+          <a href="notifications"><img src="/images/bell_white.png" alt="notifications" title="notifications page"></a>
+        </li>
+      <% } %>
     </ul>
   </nav>
 </header>
