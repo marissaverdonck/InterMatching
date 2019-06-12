@@ -21,7 +21,7 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function user1(req, res) {
-  res.render('user1');
+  res.render('user1', { title: "name user" });
 }
 
 module.exports = user1;

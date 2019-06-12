@@ -27,7 +27,7 @@ function profile(req, res) {
     if (err) {
       next(err)
     } else {
-      res.render('profile', { data: data, user: req.session.user })
+      res.render('profile', { data: data, user: req.session.user, title: "Profile" })
     }
   }
 }
