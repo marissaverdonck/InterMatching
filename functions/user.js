@@ -21,6 +21,11 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function user(req, res) {
+  if (!req.session.user){
+  
+    return res.redirect('/')
+  }
+  else {
   var id = req.params.id
   db.collection('data').findOne({
     _id: mongo.ObjectID(id)
@@ -33,6 +38,7 @@ function user(req, res) {
       res.render('user', { data: data, id: id, user: req.session.user })
     }
   }
+}
 }
 
 module.exports = user;

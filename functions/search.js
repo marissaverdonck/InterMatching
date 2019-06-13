@@ -21,15 +21,25 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function search(req, res) {
-  db.collection('data').find().toArray(done);
 
-  function done(err, data) {
-    if (err) {
-      next(err)
-    } else {
-      res.render('search', { data: data, user: req.session.user, title: "Search for Interests" });
+  if (!req.session.user) {
+
+    return res.redirect('/')
+    
+  } else {
+    db.collection('data').find().toArray(done);
+
+    function done(err, data) {
+      if (err) {
+        next(err)
+      } else {
+        res.render('search', {
+          data: data,
+          user: req.session.user,
+          title: "Search for Interests"
+        });
+      }
     }
   }
 }
-
 module.exports = search;
