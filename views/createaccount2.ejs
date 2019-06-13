@@ -5,7 +5,9 @@
       <nav>
         <ul>
           <li>
-            <a href="javascript:history.back()"><img src="/images/back.png" alt="back"></a>
+            <a href="createaccount1.ejs">
+              <p>Back</p>
+            </a>
           </li>
           <li>
             <h2> Create account </h2>
@@ -19,9 +21,8 @@
         <% include partials/form %>
           <label for="profilepicture">Choose a profile picture</label>
           <input type="file" id="profilepicture" name="profilepicture" accept="image/png, image/jpeg" onchange="loadFile(event)" required><br />
-          <img src="images/color.png" alt="gebruiker" id="output"><br />
+          <div id="uploadphoto"></div>
           <input id="button" type="submit" name="login" value="Next step" />
-
           </fieldset>
       </form>
     </section>

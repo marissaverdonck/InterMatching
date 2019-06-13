@@ -1,3 +1,14 @@
+// Create account 2, profile picture
+function upload() {
+  var uploadphoto = document.getElementById("uploadphoto");
+  var img = document.createElement("img");
+  img.src = "images/color.png";
+  img.alt = "gebruiker";
+  img.id = "output";
+  uploadphoto.appendChild(img);
+}
+upload()
+
 var loadFile = function(event) {
   var reader = new FileReader();
   reader.onload = function() {
@@ -7,6 +18,7 @@ var loadFile = function(event) {
   reader.readAsDataURL(event.target.files[0]);
 }
 
+// Create account 3, Choose interests
 var loadFile1 = function(event) {
   var reader = new FileReader();
   reader.onload = function() {
