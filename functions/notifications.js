@@ -31,5 +31,5 @@ function notifications(req, res) {
   res.render('notifications', { title: "Notifications", user: req.session.user });
 }
 
-
+}
 module.exports = notifications;
