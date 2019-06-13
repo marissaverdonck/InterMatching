@@ -784,7 +784,7 @@ form img[alt="interest"] {
   display: flex;
   flex-direction: column;
 }
-input#name1:valid ~ .interest-picture1 {
+input#name:valid ~ .interest-picture1 {
   height: auto;
   opacity: 1;
   transition: 0.7s ease 0s;
