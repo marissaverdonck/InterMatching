@@ -10,6 +10,8 @@ const find = require('array-find');
 const mongo = require('mongodb');
 const session = require('express-session');
 const expressValidator = require('express-validator');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -51,6 +53,7 @@ const createaccount2 = require('./functions/createaccount2');
 const createaccount3 = require('./functions/createaccount3');
 const changeinterests = require('./functions/changeinterests');
 const user1 = require('./functions/user1');
+const user = require('./functions/user');
 const itsamatch = require('./functions/itsamatch');
 const welcome = require('./functions/welcome');
 const search = require('./functions/search');
@@ -79,6 +82,7 @@ app.set('views', 'views');
 app.get('/', welcome);
 app.get('/notifications', notifications)
 app.get('/profile', profile);
+app.get('/profile/:id', user);
 app.get('/search', search);
 app.get('/settings', settings);
 app.get('/createaccount1', createaccount1);
@@ -97,7 +101,7 @@ app.post('/settings', changeSettings);
 app.use(notfound);
 app.listen(process.env.PORT);
 
-/* 
+/*
 Open in browser: http://localhost:3000
 Bronnen:
 dandevri, 2019- mongodb-server - https://github.com/cmda-bt/be-course-18-19/blob/master/examples/mongodb-server/index.js

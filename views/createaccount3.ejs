@@ -5,7 +5,7 @@
       <nav>
         <ul>
           <li>
-            <a href="search"><img src="/images/back.png" alt="back"></a>
+            <a href="javascript:history.back()"><img src="/images/back.png" alt="back"></a>
           </li>
           <li>
             <h2> Create account </h2>
@@ -19,39 +19,39 @@
         <fieldset>
           <p>We match people based on interests. choose 6 interests, this can be anything. Think of hobbies, your favorite food, buketlists, music you like..</p>
           <legend></legend><label for="interest1"> Interest #1</label>
-          <input name="interest" id="name" type="text" placeholder=""><br />
+          <input name="interest" id="name" type="text" placeholder="" required><br />
           <label for="picture1">Choose a picture by the interest</label>
-          <input type="file" name="picture1" accept="image/png, image/jpeg" onchange="loadFile(event)"> <br />
+          <input type="file" name="picture1" accept="image/png, image/jpeg" onchange="loadFile(event)" required> <br />
           <img src="images/color.png" alt="interest" id="output"><br />
 
           <legend></legend><label for="name "> Interest #2</label>
-          <input name="interest" id="name" type="text " placeholder=" "><br />
+          <input name="interest" id="name" type="text " placeholder=" " required><br />
           <label for="interest">Choose a picture by the interest</label>
-          <input type="file" name="picture2 " accept="image/png, image/jpeg " onchange="loadFile1(event)"> <br />
+          <input type="file" name="picture2 " accept="image/png, image/jpeg " onchange="loadFile1(event)" required> <br />
           <img src="images/color.png " alt="interest" id="output1"><br />
 
           <legend></legend><label for="name "> Interest #3</label>
-          <input name="interest" id="name" type="text " placeholder=" "><br />
+          <input name="interest" id="name" type="text " placeholder=" " required><br />
           <label for="interest ">Choose a picture by the interest</label>
-          <input type="file" name="picture3 " accept="image/png, image/jpeg " onchange="loadFile2(event)"><br />
+          <input type="file" name="picture3 " accept="image/png, image/jpeg " onchange="loadFile2(event)" required><br />
           <img src="images/color.png " alt="interest" id="output2"><br />
 
           <legend></legend><label for="name "> Interest #4</label>
-          <input name="interest" id="name " type="text " placeholder=" "><br />
+          <input name="interest" id="name " type="text " placeholder=" " required><br />
           <label for="interest ">Choose a picture by the interest</label>
-          <input type="file" name="picture4 " accept="image/png, image/jpeg " onchange="loadFile3(event)"><br />
+          <input type="file" name="picture4 " accept="image/png, image/jpeg " onchange="loadFile3(event)" required><br />
           <img src="images/color.png " alt="interest" id="output3"><br />
 
           <legend></legend><label for="name "> Interest #5</label>
-          <input name="interest" id="name " type="text " placeholder=" "><br />
+          <input name="interest" id="name " type="text " placeholder=" " required><br />
           <label for="interest ">Choose a picture by the interest</label>
-          <input type="file" name="picture5 " accept="image/png, image/jpeg " onchange="loadFile4(event)"><br />
+          <input type="file" name="picture5 " accept="image/png, image/jpeg " onchange="loadFile4(event)" required><br />
           <img src="images/color.png" alt="interest" id="output4"><br />
 
           <legend></legend><label for="name "> Interest #6</label>
-          <input name="interest" id="name " type="text " placeholder=" "><br />
+          <input name="interest" id="name " type="text " placeholder=" " required><br />
           <label for="interest ">Choose a picture by the interest</label>
-          <input type="file" name="picture6 " accept="image/png, image/jpeg " onchange="loadFile5(event)"><br />
+          <input type="file" name="picture6 " accept="image/png, image/jpeg " onchange="loadFile5(event)" required><br />
           <img src="images/color.png" alt="interest" id="output5"><br />
 
           <input id="button" type="submit" name="login " value="Finish " />

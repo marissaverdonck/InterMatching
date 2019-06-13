@@ -12,7 +12,7 @@ const session = require('express-session');
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
-var url = process.env.DB_HOST
+var url = process.env.DB_HOST;
 mongo.MongoClient.connect(url, function(err, client) {
   if (err)
     throw err
@@ -20,16 +20,19 @@ mongo.MongoClient.connect(url, function(err, client) {
 });
 
 // Function
-function settings(req, res) {
-  db.collection('data').find().toArray(done);
+function user(req, res) {
+  var id = req.params.id
+  db.collection('data').findOne({
+    _id: mongo.ObjectID(id)
+  }, done)
 
   function done(err, data) {
     if (err) {
       next(err)
     } else {
-      res.render('settings', { data: data, user: req.session.user, title: "Settings" })
+      res.render('user', { data: data, id: id, user: req.session.user, title: "Account page"})
     }
   }
 }
 
-module.exports = settings;
+module.exports = user;

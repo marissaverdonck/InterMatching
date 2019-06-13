@@ -10,6 +10,8 @@ const find = require('array-find');
 const mongo = require('mongodb');
 const session = require('express-session');
 const expressValidator = require('express-validator');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -55,6 +57,19 @@ function form1(req, res) {
       }
 
       console.log('SUCCES');
+  var pwd = req.body.password;
+  var hash = bcrypt.hashSync(pwd, saltRounds);
+  db.collection('data').insertOne({
+    email: req.body.email,
+    password: hash
+  }, done)
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      req.session.user = {id: data.ops[0]._id}
+      res.redirect('/createaccount2' + data.insertedId)
     }
   }
 }

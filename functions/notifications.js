@@ -21,7 +21,7 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function notifications(req, res) {
-  res.render('notifications');
+  res.render('notifications', { title: "Notifications" , user: req.session.user});
 }
 
 module.exports = notifications;
