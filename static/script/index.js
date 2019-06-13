@@ -1,13 +1,14 @@
 // Create account 2, profile picture
 function upload() {
   var uploadphoto = document.getElementById("uploadphoto");
-  var img = document.createElement("img");
-  img.src = "images/color.png";
-  img.alt = "gebruiker";
-  img.id = "output";
-  uploadphoto.appendChild(img);
+  if (uploadphoto) {
+    var img = document.createElement("img");
+    img.src = "images/color.png";
+    img.alt = "gebruiker";
+    img.id = "output";
+    uploadphoto.appendChild(img);
+  }
 }
-upload()
 
 var loadFile = function(event) {
   var reader = new FileReader();
@@ -60,6 +61,8 @@ var loadFile5 = function(event) {
   };
   reader.readAsDataURL(event.target.files[0]);
 }
+
+upload()
 
 //Bron: https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
 
