@@ -14,23 +14,22 @@
       </nav>
     </header>
     <section id="createaccount">
-        <% if (errors){ %>
-          <ul>
-              <% errors.forEach(function(error) { %>
-                  <li> <%= error.msg %> </li>
-              <% }) %>
-          </ul>
-        <% } %>
       <form method="post">
+          
         <fieldset>
+            <% if (errors){ %>
+              <ul id="errorcontainer">
+                  <% errors.forEach(function(error) { %>
+                      <li> <%= error.msg %> </li>
+                  <% }) %>
+              </ul>
+            <% } %>
           <legend></legend>
           <p>Which email address and password do you want to use?</p>
           <label> E-mailadress </label>
-          
-          
-          
           <input name="email" id="email" type="email" placeholder="name@mail.com">
           <label for="password"> Password </label>
+
           <input name="password" id="password" type="password">
           <input id="button" type="submit" name="login" value="Next step" />
         </fieldset>
