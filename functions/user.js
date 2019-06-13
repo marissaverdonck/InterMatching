@@ -30,7 +30,7 @@ function done(err, data) {
     if (err) {
       next(err)
     } else {
-      res.render('user', { data: data, id: id, user: req.session.user})
+      res.render('user', { data: data, id: id, user: req.session.user, title: "Account page"})
     }
 }
 }

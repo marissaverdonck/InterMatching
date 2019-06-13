@@ -27,7 +27,7 @@ function search(req, res) {
     if (err) {
       next(err)
     } else {
-      res.render('search', { data: data, user: req.session.user, title: "Hi " + req.session.user.name + "," });
+      res.render('search', { data: data, user: req.session.user, title: "Search for interest" });
     }
   }
 }
