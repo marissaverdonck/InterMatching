@@ -21,7 +21,15 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function notifications(req, res) {
-  res.render('notifications', { title: "Notifications" , user: req.session.user});
+
+  if (!req.session.user){
+  
+    return res.redirect('/')
+  }
+  else {
+  
+  res.render('notifications', { title: "Notifications", user: req.session.user });
 }
 
+}
 module.exports = notifications;

@@ -35,43 +35,30 @@ function form1(req, res) {
 
   var errors = req.validationErrors();
 
-  if(errors){
-      res.render('createaccount1', {
+  if (errors) {
+    res.render('createaccount1', {
       errors: errors
     });
-  } else{
-    var id = slug(req.body.email).toLowerCase();
+  } else {
+    var pwd = req.body.password;
+    var hash = bcrypt.hashSync(pwd, saltRounds);
     db.collection('data').insertOne({
-      id: id,
       email: req.body.email,
-      password: req.body.password
+      password: hash
     }, done)
+  }
 
-    function done(err, data) {
-      if (err) {
-        next(err)
-      } else {
-        //Redirects the browser to the given path
-        res.redirect('/createaccount2' + data.insertedId)
-        console.log(data.insertedId)
-      }
-
-      console.log('SUCCES');
-  var pwd = req.body.password;
-  var hash = bcrypt.hashSync(pwd, saltRounds);
-  db.collection('data').insertOne({
-    email: req.body.email,
-    password: hash
-  }, done)
 
   function done(err, data) {
     if (err) {
       next(err)
     } else {
-      req.session.user = {id: data.ops[0]._id}
+      req.session.user = { id: data.ops[0]._id }
       res.redirect('/createaccount2' + data.insertedId)
     }
   }
+
 }
+
 
 module.exports = form1;
