@@ -21,6 +21,11 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function settings(req, res) {
+  if (!req.session.user){
+  
+    return res.redirect('/')
+  }
+  else {
   db.collection('data').find().toArray(done);
 
   function done(err, data) {
@@ -31,5 +36,5 @@ function settings(req, res) {
     }
   }
 }
-
+}
 module.exports = settings;

@@ -21,6 +21,11 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function profile(req, res) {
+  if (!req.session.user){
+  
+    return res.redirect('/')
+  }
+  else {
   db.collection('data').find().toArray(done);
 
   function done(err, data) {
@@ -30,6 +35,7 @@ function profile(req, res) {
       res.render('profile', { data: data, user: req.session.user, title: "Profile" })
     }
   }
+}
 }
 
 module.exports = profile;
