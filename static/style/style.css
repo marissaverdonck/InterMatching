@@ -1003,3 +1003,16 @@ section#matchlaststep a:nth-child(2) {
   text-align: center;
   text-decoration: underline;
 }
+
+/*errors*/
+ul#errorcontainer {
+  background: #b8354b;
+  box-shadow: 1px 5px 11px -4px rgba(0, 0, 0, 0.18);
+  padding: 1em 2em;
+  border-radius: 0.5em;
+}
+
+ul#errorcontainer li {
+  color: #ffffff;
+  font-family: 'Avenir_Light';
+}
