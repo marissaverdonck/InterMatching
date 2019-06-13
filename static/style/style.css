@@ -888,6 +888,8 @@ section#user_interests article img:first-child {
   width: 100%;
   margin: 0 auto;
   border-radius: .75em;
+  height: 15em;
+  object-fit: cover;
 }
 
 section#user_interests article h4 {
