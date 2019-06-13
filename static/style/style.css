@@ -775,11 +775,17 @@ form img[alt="interest"] {
   border-radius: .75em;
   object-fit: cover;
   height: 18em;
-  
 }
+
+
 /*edit interest picture page*/
-.interest-picture1, .interest-picture2 , .interest-picture3, 
-.interest-picture4, .interest-picture5 , .interest-picture6 {
+
+.interest-picture1,
+.interest-picture2,
+.interest-picture3,
+.interest-picture4,
+.interest-picture5,
+.interest-picture6 {
   padding-top: 1em;
   height: 0;
   opacity: 0;
@@ -788,48 +794,48 @@ form img[alt="interest"] {
   display: flex;
   flex-direction: column;
 }
-input#name:valid ~ .interest-picture1 {
-  height: auto;
-  opacity: 1;
-  transition: 0.7s ease 0s;
-  z-index: 1
-  
-}
-input#name2:valid ~ .interest-picture2 {
-  height: auto;
-  opacity: 1;
-  transition: 0.7s ease 0s;
-  z-index: 1
-}
-input#name3:valid ~ .interest-picture3{
+
+input#name:valid~.interest-picture1 {
   height: auto;
   opacity: 1;
   transition: 0.7s ease 0s;
   z-index: 1
 }
 
-pr.enhancement-marissa
+input#name2:valid~.interest-picture2 {
+  height: auto;
+  opacity: 1;
+  transition: 0.7s ease 0s;
+  z-index: 1
+}
+
+input#name3:valid~.interest-picture3 {
+  height: auto;
+  opacity: 1;
+  transition: 0.7s ease 0s;
+  z-index: 1
+}
+
 form div#uploadphoto {
   margin: 0 auto;
   display: flex;
 }
 
-
-input#name4:valid ~ .interest-picture4 {
+input#name4:valid~.interest-picture4 {
   height: auto;
   opacity: 1;
   transition: 0.7s ease 0s;
   z-index: 1
 }
 
-input#name5:valid ~ .interest-picture5 {
+input#name5:valid~.interest-picture5 {
   height: auto;
   opacity: 1;
   transition: 0.7s ease 0s;
   z-index: 1
 }
 
-input#name6:valid ~ .interest-picture6 {
+input#name6:valid~.interest-picture6 {
   height: auto;
   opacity: 1;
   transition: 0.7s ease 0s;

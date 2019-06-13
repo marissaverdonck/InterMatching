@@ -20,7 +20,13 @@ mongo.MongoClient.connect(url, function(err, client) {
 });
 // Function
 function itsamatch(req, res) {
-  res.render('itsamatch');
+  if (!req.session.user){
+  
+    return res.redirect('/')
+  }
+  else {
+  res.render('itsamatch', {user: req.session.user});
+}
 }
 
 module.exports = itsamatch;

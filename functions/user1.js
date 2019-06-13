@@ -21,7 +21,13 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function user1(req, res) {
-  res.render('user1', { title: "name user" });
+  if (!req.session.user){
+  
+    return res.redirect('/')
+  }
+  else {
+  res.render('user1', {user: req.session.user, title: "name user" });
+}
 }
 
 module.exports = user1;
