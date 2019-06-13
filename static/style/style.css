@@ -746,11 +746,15 @@ section#notfound button {
 
 /*Create an account pages*/
 
-header nav ul li img[alt="back"] {
+header nav a p {
+  text-indent: -999px;
+  background-image: url(../images/back.png);
   width: 1.5em;
-  height: auto;
+  height: 1.5em;
   margin: 0;
-  padding: 0;
+  padding: 0em;
+  background-size: 1.5em;
+  background-repeat: no-repeat;
 }
 
 section#createaccount {
@@ -771,6 +775,65 @@ form img[alt="interest"] {
   border-radius: .75em;
   object-fit: cover;
   height: 18em;
+  
+}
+/*edit interest picture page*/
+.interest-picture1, .interest-picture2 , .interest-picture3, 
+.interest-picture4, .interest-picture5 , .interest-picture6 {
+  padding-top: 1em;
+  height: 0;
+  opacity: 0;
+  transition: 0.1s ease 0s;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+}
+input#name:valid ~ .interest-picture1 {
+  height: auto;
+  opacity: 1;
+  transition: 0.7s ease 0s;
+  z-index: 1
+  
+}
+input#name2:valid ~ .interest-picture2 {
+  height: auto;
+  opacity: 1;
+  transition: 0.7s ease 0s;
+  z-index: 1
+}
+input#name3:valid ~ .interest-picture3{
+  height: auto;
+  opacity: 1;
+  transition: 0.7s ease 0s;
+  z-index: 1
+}
+
+pr.enhancement-marissa
+form div#uploadphoto {
+  margin: 0 auto;
+  display: flex;
+}
+
+
+input#name4:valid ~ .interest-picture4 {
+  height: auto;
+  opacity: 1;
+  transition: 0.7s ease 0s;
+  z-index: 1
+}
+
+input#name5:valid ~ .interest-picture5 {
+  height: auto;
+  opacity: 1;
+  transition: 0.7s ease 0s;
+  z-index: 1
+}
+
+input#name6:valid ~ .interest-picture6 {
+  height: auto;
+  opacity: 1;
+  transition: 0.7s ease 0s;
+  z-index: 1
 }
 
 

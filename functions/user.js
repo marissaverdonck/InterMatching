@@ -20,19 +20,19 @@ mongo.MongoClient.connect(url, function(err, client) {
 });
 
 // Function
-function user(req, res){
-var id = req.params.id
-db.collection('data').findOne({
-  _id: mongo.ObjectID(id)
-}, done)
+function user(req, res) {
+  var id = req.params.id
+  db.collection('data').findOne({
+    _id: mongo.ObjectID(id)
+  }, done)
 
-function done(err, data) {
+  function done(err, data) {
     if (err) {
       next(err)
     } else {
       res.render('user', { data: data, id: id, user: req.session.user, title: "Account page"})
     }
-}
+  }
 }
 
 module.exports = user;
