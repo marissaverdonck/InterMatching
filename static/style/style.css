@@ -141,20 +141,19 @@ section#login form fieldset input {
   padding: .7em .7em .7em 1em;
   width: 100%;
   border-radius: 2em;
-  border: none;
   font-family: 'Avenir_Light';
   font-size: 90%;
   box-shadow: 1px 5px 11px -4px rgba(0, 0, 0, 0.18);
+  border-width: 0.15em;
+  border: .1em solid #EBBAB5;
 }
 
 section#login form fieldset input:hover {
   border: .1em solid #c58747;
-  border-width: 0.15em;
 }
 
 section#login form fieldset input:focus {
   border: .1em solid #c58747;
-  border-width: 0.15em;
 }
 
 section#login form fieldset input:active {
@@ -633,17 +632,19 @@ form fieldset input {
   border-radius: 2em;
   border: none;
   font-family: 'Avenir_Light';
-  font-size: 90%;
+  /*! font-size: 90%; */
   box-shadow: 1px 5px 11px -4px rgba(0, 0, 0, 0.18);
+  border: .1em solid #fff8f3;
+  /*! border-width: 0.15em; */
 }
 
 form fieldset input[type=file] {
   box-shadow: none;
+  margin-bottom: 1em;
 }
 
 form fieldset input:hover {
   border: .1em solid #c58747;
-  border-width: 0.15em;
 }
 
 form fieldset input:focus {
