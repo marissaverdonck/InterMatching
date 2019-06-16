@@ -21,20 +21,25 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function settings(req, res) {
-  if (!req.session.user){
-  
-    return res.redirect('/')
-  }
-  else {
-  db.collection('data').find().toArray(done);
+  if(req.session.user) {
+    var id = req.session.user.id
+    db.collection('data').findOne({
+      _id: mongo.ObjectID(id)
+    }, done)
+} else {
+    res.redirect('/')
+}
 
   function done(err, data) {
     if (err) {
       next(err)
-    } else {
+    } else { if(req.session.user) {
       res.render('settings', { data: data, user: req.session.user, title: "Settings" })
     }
+    else {
+      res.render('/')
   }
+}
 }
 }
 module.exports = settings;
