@@ -24,11 +24,11 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function saveinterest(req, res) {
-  var id = req.session.user._id
+  var id = req.session.user.id
   db.collection('data').update({
       _id: new mongo.ObjectID(id)
     }, {
-      $set: {
+      $push: {
         like: req.body.like,
       },
     },
@@ -39,8 +39,7 @@ function saveinterest(req, res) {
       next(err)
     } else {
       //Redirects the browser to the given path
-      res.redirect('/search')
-      console.log(req.session.user._id);
+      console.log(id);
     }
   }
 }

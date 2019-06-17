@@ -56,12 +56,36 @@
         <h3> Interests</h3>
         <p> We create matches with interests. Which interests does your dream match have? Choose the one you like and get matched! </p>
 
-        <article>
+        <article id="5d0001937d5ae1078d2caa87">
           <img src="images/climbing.png" alt="interest climbing" class="interest">
           <h4>Climbing</h4>
           <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
+            <form method="POST">
+              <input name="like[]" id="like" type="radio" value="5d0001937d5ae1078d2caa87" onchange="this.form.submit()" />
+              <input name="like[]" id="dislike" type="radio" value="dislike" onchange="this.form.submit()" />
+            </form>
+          </div>
+        </article>
+
+        <article id="6d0001937d5ae1078d2caa87">
+          <img src="images/climbing.png" alt="interest climbing" class="interest">
+          <h4>Climbing</h4>
+          <div>
+            <form method="POST">
+              <input name="like[]" id="like" type="radio" value="6d0001937d5ae1078d2caa87, " onchange="this.form.submit()" />
+              <input name="like[]" id="dislike" type="radio" value="dislike" onchange="this.form.submit()" />
+            </form>
+          </div>
+        </article>
+
+        <article id="7d0001937d5ae1078d2caa87">
+          <img src="images/climbing.png" alt="interest climbing" class="interest">
+          <h4>Climbing</h4>
+          <div>
+            <form method="POST">
+              <input name="like[]" id="like" type="radio" value="7d0001937d5ae1078d2caa87" onchange="this.form.submit()" />
+              <input name="like[]" id="dislike" type="radio" value="dislike" onchange="this.form.submit()" />
+            </form>
           </div>
         </article>
 
