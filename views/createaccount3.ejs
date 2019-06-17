@@ -20,43 +20,50 @@
       <form method="post" enctype="multipart/form-data">
         <fieldset>
           <p>We match people based on interests. choose 6 interests, this can be anything. Think of hobbies, your favorite food, buketlists, music you like..</p>
-          <legend></legend><label for="interest1"> Interest #1</label>
-          <input name="interest" id="name" type="text" placeholder="" required><br />
+          <legend></legend><label for="name"> Interest #1</label>
+          <input name="interest" id="name" type="text" placeholder="" required>\
+          <div class="interest-picture1">
           <label for="picture1">Choose a picture by the interest</label>
           <input type="file" name="picture1" accept="image/png, image/jpeg" onchange="loadFile(event)" required> <br />
           <img src="images/color.png" alt="interest" id="output"><br />
-
+        </div>
           <legend></legend><label for="name "> Interest #2</label>
-          <input name="interest" id="name" type="text " placeholder=" " required><br />
+          <input name="interest" id="name2" type="text " placeholder=" " required>
+          <div class="interest-picture2">
           <label for="interest">Choose a picture by the interest</label>
           <input type="file" name="picture2 " accept="image/png, image/jpeg " onchange="loadFile1(event)" required> <br />
           <img src="images/color.png " alt="interest" id="output1"><br />
-
+        </div>
           <legend></legend><label for="name "> Interest #3</label>
-          <input name="interest" id="name" type="text " placeholder=" " required><br />
+          <input name="interest" id="name3" type="text " placeholder=" " required><br />
+          <div class="interest-picture3">
           <label for="interest ">Choose a picture by the interest</label>
           <input type="file" name="picture3 " accept="image/png, image/jpeg " onchange="loadFile2(event)" required><br />
           <img src="images/color.png " alt="interest" id="output2"><br />
-
+        </div>
           <legend></legend><label for="name "> Interest #4</label>
-          <input name="interest" id="name " type="text " placeholder=" " required><br />
+          <input name="interest" id="name4" type="text " placeholder=" " required><br />
+          <div class="interest-picture4">
           <label for="interest ">Choose a picture by the interest</label>
           <input type="file" name="picture4 " accept="image/png, image/jpeg " onchange="loadFile3(event)" required><br />
           <img src="images/color.png " alt="interest" id="output3"><br />
-
+        </div>
           <legend></legend><label for="name "> Interest #5</label>
-          <input name="interest" id="name " type="text " placeholder=" " required><br />
+          <input name="interest" id="name5" type="text " placeholder=" " required><br />
+          <div class="interest-picture5">
           <label for="interest ">Choose a picture by the interest</label>
           <input type="file" name="picture5 " accept="image/png, image/jpeg " onchange="loadFile4(event)" required><br />
           <img src="images/color.png" alt="interest" id="output4"><br />
-
+        </div>
           <legend></legend><label for="name "> Interest #6</label>
-          <input name="interest" id="name " type="text " placeholder=" " required><br />
+          <input name="interest" id="name6" type="text " placeholder=" " required><br />
+          <div class="interest-picture6">
           <label for="interest ">Choose a picture by the interest</label>
           <input type="file" name="picture6 " accept="image/png, image/jpeg " onchange="loadFile5(event)" required><br />
           <img src="images/color.png" alt="interest" id="output5"><br />
 
           <input id="button" type="submit" name="login " value="Finish " />
+        </div>
         </fieldset>
       </form>
     </section>
