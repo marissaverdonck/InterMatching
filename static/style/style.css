@@ -1022,3 +1022,12 @@ ul#errorcontainer li {
   color: #ffffff;
   font-family: 'Avenir_Light';
 }
+
+
+
+
+/* deleteAcc */
+
+form.deleteAcc label{
+    display: inline;
+}

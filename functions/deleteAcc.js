@@ -20,35 +20,21 @@ mongo.MongoClient.connect(url, function(err, client) {
 });
 
 // Function
-function remove(req, res) {
+function deleteAcc(req, res) {
   if (!req.session.user){
 
     return res.redirect('/')
   }
   else {
-  var sessionID = req.session.user;
-  var accountID = sessionID.id;
-  var ObjectID = require('mongodb').ObjectID;
-
-  db.collection('data').remove(
-    { _id: ObjectID(accountID) }
-  , done);
+  db.collection('data').find().toArray(done);
 
   function done(err, data) {
     if (err) {
       next(err)
     } else {
-        req.session.destroy(function(err) {
-          if (err) {
-            next(err);
-          } else {
-              setTimeout(function () {
-                res.redirect('/');
-              }, 3000);
-          }
-        })
+      res.render('deleteAcc', { data: data, user: req.session.user, title: "Delete account" })
     }
   }
 }
 }
-module.exports = remove;
+module.exports = deleteAcc;

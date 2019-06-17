@@ -1,0 +1,25 @@
+<% include partials/head %>
+
+  <body>
+    <% include partials/header %>
+
+      <section id="settings">
+        <a href="javascript:history.back()" id="back">
+          < back</a>
+            <form method="post" class="deleteConf">
+              <fieldset>
+                <legend>Are you sure you want to delete your account?</legend>
+                <p>With deleting your account there is no turning back from here. All your saved data and matches will be deleted. </p>
+                <label for="confirm">Yes I am sure i want to delete my account.</label>
+                <input type="checkbox" id="confirm" name="confirm" value="confirm" required>
+
+
+                <input id="button" type="submit" name="submit" value="Delete my account" />
+              </fieldset>
+            </form>
+      </section>
+        <script type="text/javascript" src="/server.js"></script>
+        <script type="text/javascript" src="script/script.js"></script>
+  </body>
+
+  </html>
