@@ -65,68 +65,28 @@
           </div>
         </article>
 
-        <article>
-          <img src="images/ski.png" alt="interest ski" class="interest">
-          <h4>Ski</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+        <% for (var l = 0; l < data.length; l++) {%>
+          <% var user = data[l]; %>
 
-        <article>
-          <img src="images/cooking.png" alt="interest cooking" class="interest">
-          <h4>Cooking</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+          <% if (user.interests != null) {%>
+            <% for (var i = 0; i < user.interests.length; i++) {%>
+              
+              <article>
+                <!-- <%= user.pictures[i].path %> -->
+                <img src="https://loremflickr.com/320/240" alt="interest climbing" class="interest">
+                
+                <h4><%= user.interests[i] %></h4>
+                <div>
+                  <input name="like" id="like" type="radio" value="like" />
+                  <input name="like" id="dislike" type="radio" value="dislike" />
+                </div>
+              </article>
+            <% } %>
+          <% } %>
+         
+      <% } %>
 
-        <article>
-          <img src="images/mounteverest.png" alt="mount everest" class="interest">
-          <h4>Climb Mount everest</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
-
-        <article>
-          <img src="images/dog.png" alt="interest dogs" class="interest">
-          <h4>Dogs</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
-
-        <article>
-          <img src="images/code.png" alt="interest code" class="interest">
-          <h4>Code</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
-
-        <article>
-          <img src="images/mtb.png" class="interest" alt="interest mountainbike" class="interest">
-          <h4>Mountainbike</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
-
-        <article>
-          <img src="images/guitar.png" alt="interest guitar" class="interest">
-          <h4>Play guitar</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
+    
 
       </section>
 
