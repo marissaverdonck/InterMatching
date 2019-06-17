@@ -56,6 +56,7 @@
         <h3> Interests</h3>
         <p> We create matches with interests. Which interests does your dream match have? Choose the one you like and get matched! </p>
 
+<<<<<<< HEAD
         <article id="5d0001937d5ae1078d2caa87">
           <img src="images/climbing.png" alt="interest climbing" class="interest">
           <h4>Climbing</h4>
@@ -93,11 +94,18 @@
           <img src="images/ski.png" alt="interest ski" class="interest">
           <h4>Ski</h4>
           <div>
+=======
+        <article>
+          <img src="images/climbing.png" alt="interest climbing" class="interest">
+          <h4>Climbing</h4>
+          <div>
+>>>>>>> master
             <input name="like" id="like" type="radio" value="like" />
             <input name="like" id="dislike" type="radio" value="dislike" />
           </div>
         </article>
 
+<<<<<<< HEAD
         <article>
           <img src="images/cooking.png" alt="interest cooking" class="interest">
           <h4>Cooking</h4>
@@ -151,6 +159,30 @@
             <input name="like" id="dislike" type="radio" value="dislike" />
           </div>
         </article>
+=======
+        <% for (var l = 0; l < data.length; l++) {%>
+          <% var user = data[l]; %>
+
+          <% if (user.interests != null) {%>
+            <% for (var i = 0; i < user.interests.length; i++) {%>
+              
+              <article>
+                <!-- <%= user.pictures[i].path %> -->
+                <img src="https://loremflickr.com/320/240" alt="interest climbing" class="interest">
+                
+                <h4><%= user.interests[i] %></h4>
+                <div>
+                  <input name="like" id="like" type="radio" value="like" />
+                  <input name="like" id="dislike" type="radio" value="dislike" />
+                </div>
+              </article>
+            <% } %>
+          <% } %>
+         
+      <% } %>
+
+    
+>>>>>>> master
 
       </section>
 
