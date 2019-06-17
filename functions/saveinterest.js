@@ -38,10 +38,11 @@ function saveinterest(req, res) {
     if (err) {
       next(err)
     } else {
-      //Redirects the browser to the given path
-      console.log(id);
+      res.redirect("search")
     }
   }
 }
+
+
 
 module.exports = saveinterest;

@@ -71,8 +71,10 @@
                     <%= user.interests[i] %>
                   </h4>
                   <div>
-                    <input name="like" id="like" type="radio" value="like" />
-                    <input name="like" id="dislike" type="radio" value="dislike" />
+                    <form method="post" action="/search">
+                      <input name="like[]" id="like" type="radio" value="<%= user._id %>" onClick="this.form.submit()" />
+                      <input name="like[]" id="dislike" type="radio" value="dislike" />
+                    </form>
                   </div>
                 </article>
                 <% } %>
@@ -92,7 +94,7 @@
 
       </section>
 
-
+      <script type="text/javascript" src="/script/index.js"></script>
 
       <!-- <script type="text/javascript" src="/server.js"></script>
       <script type="text/javascript" src="script/script.js"></script> -->

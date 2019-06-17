@@ -424,7 +424,7 @@ section#interesses article div {
   border-bottom-right-radius: .75em;
 }
 
-section#interesses article div input#like[type="radio"] {
+section#interesses article div form input#like[type="radio"] {
   content: url('/images/heart.png');
   width: 1.4em;
   height: 1.4em;
@@ -432,7 +432,7 @@ section#interesses article div input#like[type="radio"] {
   margin: auto;
 }
 
-section#interesses article div input#like[type="radio"]:checked {
+section#interesses article div form input#like[type="radio"]:checked {
   content: url('/images/heart_red.png');
   width: 1.4em;
   height: 1.2em;
@@ -440,7 +440,7 @@ section#interesses article div input#like[type="radio"]:checked {
   margin: auto;
 }
 
-section#interesses article div input#dislike[type="radio"] {
+section#interesses article div form input#dislike[type="radio"] {
   content: url('/images/cross.png');
   width: 1.4em;
   height: 1.3em;
@@ -448,7 +448,7 @@ section#interesses article div input#dislike[type="radio"] {
   margin: auto;
 }
 
-section#interesses article div input#dislike[type="radio"]:checked {
+section#interesses article div form input#dislike[type="radio"]:checked {
   content: url('/images/cross_red.png');
   width: 1.2em;
   height: 1.2em;
@@ -1013,7 +1013,9 @@ section#matchlaststep a:nth-child(2) {
   text-decoration: underline;
 }
 
+
 /*errors*/
+
 ul#errorcontainer {
   background: #b8354b;
   box-shadow: 1px 5px 11px -4px rgba(0, 0, 0, 0.18);
