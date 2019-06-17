@@ -1,4 +1,4 @@
-<% include partials/head %>
+<% include partials/head %>git merge master
 
   <body>
 
@@ -56,37 +56,33 @@
         <h3> Interests</h3>
         <p> We create matches with interests. Which interests does your dream match have? Choose the one you like and get matched! </p>
 
-        <article>
-          <img src="images/climbing.png" alt="interest climbing" class="interest">
-          <h4>Climbing</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
 
         <% for (var l = 0; l < data.length; l++) {%>
           <% var user = data[l]; %>
 
-          <% if (user.interests != null) {%>
-            <% for (var i = 0; i < user.interests.length; i++) {%>
-              
-              <article>
-                <!-- <%= user.pictures[i].path %> -->
-                <img src="https://loremflickr.com/320/240" alt="interest climbing" class="interest">
-                
-                <h4><%= user.interests[i] %></h4>
-                <div>
-                  <input name="like" id="like" type="radio" value="like" />
-                  <input name="like" id="dislike" type="radio" value="dislike" />
-                </div>
-              </article>
-            <% } %>
-          <% } %>
-         
-      <% } %>
+            <% if (user.interests != null) {%>
+              <% for (var i = 0; i < user.interests.length; i++) {%>
 
-    
+                <article>
+                  <!-- <%= user.pictures[i].path %> -->
+                  <img src="https://loremflickr.com/320/240" alt="interest climbing" class="interest">
+
+                  <h4>
+                    <%= user.interests[i] %>
+                  </h4>
+                  <div>
+                    <form method="post" action="/search">
+                      <input name="like[]" id="like" type="radio" value="<%= user._id %>" onClick="this.form.submit()" />
+                      <input name="like[]" id="dislike" type="radio" value="dislike" />
+                    </form>
+                  </div>
+                </article>
+                <% } %>
+                  <% } %>
+
+                    <% } %>
+
+
 
       </section>
 
@@ -98,7 +94,7 @@
 
       </section>
 
-
+      <script type="text/javascript" src="/script/index.js"></script>
 
       <!-- <script type="text/javascript" src="/server.js"></script>
       <script type="text/javascript" src="script/script.js"></script> -->
