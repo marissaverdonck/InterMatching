@@ -42,13 +42,6 @@
               <p>Jeroen</p>
             </a>
           </article>
-
-          <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
-            </a>
-          </article>
         </div>
       </section>
 
@@ -60,12 +53,17 @@
         <% for (var l = 0; l < data.length; l++) {%>
           <% var user = data[l]; %>
 
+
             <% if (user.interests != null) {%>
               <% for (var i = 0; i < user.interests.length; i++) {%>
 
+
+
+
                 <article>
                   <!-- <%= user.pictures[i].path %> -->
-                  <img src="/images/dog.png" alt="d" class="interest">
+
+                  <img src="/upload/<%= user.pictures[i].filename %>" alt="" class="interest">
 
                   <h4>
                     <%= user.interests[i] %>
@@ -79,7 +77,6 @@
                 </article>
                 <% } %>
                   <% } %>
-
                     <% } %>
 
 
