@@ -26,13 +26,27 @@ function remove(req, res) {
     return res.redirect('/')
   }
   else {
-  var sessionID = req.session.user;
-  var accountID = sessionID.id;
-  var ObjectID = require('mongodb').ObjectID;
+          req.checkBody('confirm', "Please confirm you want to delete your account").notEmpty();
 
-  db.collection('data').remove(
-    { _id: ObjectID(accountID) }
-  , done);
+          var errors = req.validationErrors();
+
+      if (errors) {
+        res.render('deleteAcc', {
+            errors: errors,
+            user: req.session.user,
+            title: "Delete account"
+        });
+      } else {
+      var sessionID = req.session.user;
+      var accountID = sessionID.id;
+      var ObjectID = require('mongodb').ObjectID;
+
+      // db.collection('data').remove(
+      //   { _id: ObjectID(accountID) }
+      // , done);
+      done()
+      }
+}
 
   function done(err, data) {
     if (err) {
@@ -49,6 +63,5 @@ function remove(req, res) {
         })
     }
   }
-}
 }
 module.exports = remove;
