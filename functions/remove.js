@@ -41,10 +41,10 @@ function remove(req, res) {
       var accountID = sessionID.id;
       var ObjectID = require('mongodb').ObjectID;
 
-      // db.collection('data').remove(
-      //   { _id: ObjectID(accountID) }
-      // , done);
-      done()
+      db.collection('data').remove(
+        { _id: ObjectID(accountID) }
+      , done);
+
       }
 }
 
