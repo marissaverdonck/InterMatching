@@ -70,6 +70,7 @@ const saveinterest = require('./functions/saveinterest');
 const notfound = require('./functions/notfound');
 const listen = require('./functions/listen');
 const remove = require('./functions/remove');
+const deleteAcc = require('./functions/deleteAcc');
 const sess = {
   resave: false,
   saveUninitialized: true,
@@ -95,13 +96,15 @@ app.get('/user1', user1);
 app.get('/itsamatch', itsamatch)
 app.get('/log-out', logout);
 app.get('/list', allusers);
+app.get('/delete-account', deleteAcc);
+app.post('/delete-account', remove);
 app.post('/createaccount1', form1);
 app.post('/createaccount2' + ':id', upload.single('profilepicture'), form2);
 app.post('/createaccount3' + ':id', upload.any(), form3);
 app.post('/', checkLogin);
 app.post('/settings', changeSettings);
 app.post('/search', saveinterest);
-app.delete('/settings', remove)
+
 app.use(notfound);
 app.listen(process.env.PORT);
 
