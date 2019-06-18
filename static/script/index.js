@@ -1,22 +1,27 @@
-// Create account 2, profile picture
-function upload() {
-  var uploadphoto = document.getElementById("uploadphoto");
-  if (uploadphoto) {
-    var img = document.createElement("img");
-    img.src = "images/color.png";
-    img.alt = "gebruiker";
-    img.id = "output";
-    uploadphoto.appendChild(img);
+// Create account 2, profile picture 
+var upload = function() {
+    var uploadphoto = document.getElementById("uploadphoto");
+    if (uploadphoto) {
+      var img = document.createElement("img");
+      img.src = "images/color.png";
+      img.alt = "gebruiker";
+      img.id = "output";
+      uploadphoto.appendChild(img);
+    }
   }
-}
-
+  // Bron: https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
 var loadFile = function(event) {
+  // Asynchronously loading the image 
   var reader = new FileReader();
+  //Starts reading the content from input type="file"
+  reader.readAsDataURL(event.target.files[0]);
+  // When something is loaded, call function:
   reader.onload = function() {
+    // Search for basic image
     var output = document.getElementById('output');
+    // Sets src attribute to the loaded image
     output.src = reader.result;
   };
-  reader.readAsDataURL(event.target.files[0]);
 }
 
 // Create account 3, Choose interests
@@ -63,8 +68,7 @@ var loadFile5 = function(event) {
 }
 
 upload()
-
-//Bron: https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
+  //Bron: https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
 
 /* 
 var remove = document.getElementById('js-remove')
