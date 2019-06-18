@@ -3,7 +3,6 @@ package-lock.json
 .DS_Store
 .vscode
 .eslintrc.js
-/static/upload/*
 !*.gitkeep
 */.DS_Store
 **/.DS_Store
