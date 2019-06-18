@@ -9,6 +9,9 @@ const multer = require('multer');
 const find = require('array-find');
 const mongo = require('mongodb');
 const session = require('express-session');
+const expressValidator = require('express-validator');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 var upload = multer({ dest: 'static/upload/' });
 var db = null;
 require('dotenv').config();
@@ -20,27 +23,26 @@ mongo.MongoClient.connect(url, function(err, client) {
 });
 
 // Function
-function changeinterests(req, res) {
-  if(req.session.user) {
-    var id = req.session.user.id
-    db.collection('data').findOne({
-      _id: mongo.ObjectID(id)
-    }, done)
-} else {
-    res.redirect('/')
-}
-function done(err, data) {
-  if (err) {
-    next(err)
-  } else {
-    if(req.session.user) {
-      res.render('changeinterests', { data: data, user: req.session.user, title: "Search for Interests" });
+function saveinterest(req, res) {
+  var id = req.session.user.id
+  db.collection('data').update({
+      _id: new mongo.ObjectID(id)
+    }, {
+      $push: {
+        like: req.body.like,
+      },
+    },
+    done)
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+      res.redirect("search")
     }
-    else {
-      res.render('/')
   }
 }
-}
-}
 
-module.exports = changeinterests;
+
+
+module.exports = saveinterest;

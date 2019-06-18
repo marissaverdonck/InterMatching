@@ -141,20 +141,19 @@ section#login form fieldset input {
   padding: .7em .7em .7em 1em;
   width: 100%;
   border-radius: 2em;
-  border: none;
   font-family: 'Avenir_Light';
   font-size: 90%;
   box-shadow: 1px 5px 11px -4px rgba(0, 0, 0, 0.18);
+  border-width: 0.15em;
+  border: .1em solid #EBBAB5;
 }
 
 section#login form fieldset input:hover {
   border: .1em solid #c58747;
-  border-width: 0.15em;
 }
 
 section#login form fieldset input:focus {
   border: .1em solid #c58747;
-  border-width: 0.15em;
 }
 
 section#login form fieldset input:active {
@@ -415,7 +414,7 @@ section#interesses article img.interest {
   border-top-right-radius: .75em;
 }
 
-section#interesses article div {
+section#interesses article div form {
   background-color: #ffffff;
   display: flex;
   height: 3em;
@@ -425,7 +424,7 @@ section#interesses article div {
   border-bottom-right-radius: .75em;
 }
 
-section#interesses article div input#like[type="radio"] {
+section#interesses article div form input#like[type="radio"] {
   content: url('/images/heart.png');
   width: 1.4em;
   height: 1.4em;
@@ -433,7 +432,7 @@ section#interesses article div input#like[type="radio"] {
   margin: auto;
 }
 
-section#interesses article div input#like[type="radio"]:checked {
+section#interesses article div form input#like[type="radio"]:checked {
   content: url('/images/heart_red.png');
   width: 1.4em;
   height: 1.2em;
@@ -441,7 +440,7 @@ section#interesses article div input#like[type="radio"]:checked {
   margin: auto;
 }
 
-section#interesses article div input#dislike[type="radio"] {
+section#interesses article div form input#dislike[type="radio"] {
   content: url('/images/cross.png');
   width: 1.4em;
   height: 1.3em;
@@ -449,7 +448,7 @@ section#interesses article div input#dislike[type="radio"] {
   margin: auto;
 }
 
-section#interesses article div input#dislike[type="radio"]:checked {
+section#interesses article div form input#dislike[type="radio"]:checked {
   content: url('/images/cross_red.png');
   width: 1.2em;
   height: 1.2em;
@@ -459,8 +458,8 @@ section#interesses article div input#dislike[type="radio"]:checked {
 
 section#interesses article h4 {
   color: #ffffff;
-  margin: -2.5em 0px 1em 0em;
-  background-color: #000000a1;
+  margin: -2.5em 0px 0em 0em;
+  background-color: #0000001a;
   position: relative;
   padding: 0.5em 1em;
 }
@@ -586,7 +585,7 @@ section#your_interests article h4 {
   word-break: break-all;
   line-height: 1em;
   position: relative;
-  background-color: #0000008c;
+  background-color: #0000001a;
   padding: 1em 1em;
   border-radius: 0 0 .75em .75em;
 }
@@ -633,17 +632,19 @@ form fieldset input {
   border-radius: 2em;
   border: none;
   font-family: 'Avenir_Light';
-  font-size: 90%;
+  /*! font-size: 90%; */
   box-shadow: 1px 5px 11px -4px rgba(0, 0, 0, 0.18);
+  border: .1em solid #fff8f3;
+  /*! border-width: 0.15em; */
 }
 
 form fieldset input[type=file] {
   box-shadow: none;
+  margin-bottom: 1em;
 }
 
 form fieldset input:hover {
   border: .1em solid #c58747;
-  border-width: 0.15em;
 }
 
 form fieldset input:focus {
@@ -888,6 +889,8 @@ section#user_interests article img:first-child {
   width: 100%;
   margin: 0 auto;
   border-radius: .75em;
+  height: 15em;
+  object-fit: cover;
 }
 
 section#user_interests article h4 {
@@ -1010,7 +1013,9 @@ section#matchlaststep a:nth-child(2) {
   text-decoration: underline;
 }
 
+
 /*errors*/
+
 ul#errorcontainer {
   background: #b8354b;
   box-shadow: 1px 5px 11px -4px rgba(0, 0, 0, 0.18);

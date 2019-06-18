@@ -12,26 +12,26 @@
                 <% if (user) { %>
 
                   <label for="name"> First Name</label>
-                  <input name="name" id="name" type="text" value="<%= user.name %>"><br />
+                  <input name="name" id="name" type="text" value="<%= data.name %>"><br />
                   <label for="dateofbirth"> Date of birth </label>
-                  <input name="dateofbirth" id="dateofbirth" type="date " value="<%= user.dateofbirth %>"><br />
+                  <input name="dateofbirth" id="dateofbirth" type="date " value="<%= data.dateofbirth %>"><br />
                   <label for="location "> Place of residence </label>
-                  <input name="location" id="location" type="text" value="<%= user.location %>"><br />
+                  <input name="location" id="location" type="text" value="<%= data.location %>"><br />
                   <label for="gender" id="gender"> Gender </label>
-                  <p><input id="gender" type="radio" name="gender" value="men" <% if (user.gender=="men" ) { %> checked="checked"
+                  <p><input id="gender" type="radio" name="gender" value="men" <% if (data.gender=="men" ) { %> checked="checked"
                     <% } %> /> Men
-                      <input id="gender" type="radio" name="gender" value="women" <% if (user.gender=="women" ) { %> checked="checked"
+                      <input id="gender" type="radio" name="gender" value="women" <% if (data.gender=="women" ) { %> checked="checked"
                       <% } %> />Women</p>
                   <label for="orientation" id="orientation"> I'm looking for a </label>
-                  <p><input name="orientation" id="orientation" type="checkbox" value="men" <% if (user.orientation=="men" ) { %> checked="checked"
+                  <p><input name="orientation" id="orientation" type="checkbox" value="men" <% if (data.orientation=="men" ) { %> checked="checked"
                     <% } %>/> Men
-                      <input name="orientation" id="orientation" type="checkbox" value="women" <% if (user.orientation=="women" ) { %> checked="checked"
+                      <input name="orientation" id="orientation" type="checkbox" value="women" <% if (data.orientation=="women" ) { %> checked="checked"
                       <% } %>
                         /> Women</p>
                   <label for="agefrom"> minimum age</label>
-                  <input name="agefrom" id="agefrom" type="number" value="<%= user.agefrom %>">
+                  <input name="agefrom" id="agefrom" type="number" value="<%= data.agefrom %>">
                   <label for="agetill"> maximum age</label>
-                  <input name="agetill" id="agetill" type="number" value="<%= user.agetill %>"><br />
+                  <input name="agetill" id="agetill" type="number" value="<%= data.agetill %>"><br />
                   <input id="button" type="submit" name="submit" value="Save settings" />
               </fieldset>
             </form>
