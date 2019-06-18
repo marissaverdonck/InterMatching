@@ -21,7 +21,8 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function changeSettings(req, res) {
-  var id = req.session.user._id;
+  // var id = req.session.user._id;
+  var id = req.params.id
   db.collection('data').update({
       _id: new mongo.ObjectID(id)
     }, {
@@ -42,7 +43,7 @@ function changeSettings(req, res) {
       next(err)
     } else {
       //Redirects the browser to the given path
-      res.redirect('/settings')
+      res.redirect('/profile')
     }
   }
 }

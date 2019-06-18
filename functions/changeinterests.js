@@ -37,7 +37,7 @@ function done(err, data) {
       res.render('changeinterests', { data: data, user: req.session.user, title: "Search for Interests" });
     }
     else {
-      res.render('/')
+      res.render('/profile')
   }
 }
 }

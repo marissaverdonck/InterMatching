@@ -65,6 +65,7 @@ const allusers = require('./functions/allusers');
 const form1 = require('./functions/form1');
 const form2 = require('./functions/form2');
 const form3 = require('./functions/form3');
+const form4 = require('./functions/form4');
 const changeSettings = require('./functions/changeSettings');
 const notfound = require('./functions/notfound');
 const listen = require('./functions/listen');
@@ -89,7 +90,7 @@ app.get('/settings', settings);
 app.get('/createaccount1', createaccount1);
 app.get('/createaccount2' + ':id', createaccount2)
 app.get('/createaccount3' + ':id', createaccount3)
-app.get('/changeinterests', changeinterests)
+app.get('/changeinterests', changeinterests )
 app.get('/user1', user1);
 app.get('/itsamatch', itsamatch)
 app.get('/log-out', logout);
@@ -97,6 +98,7 @@ app.get('/list', allusers);
 app.post('/createaccount1', form1);
 app.post('/createaccount2' + ':id', upload.single('profilepicture'), form2);
 app.post('/createaccount3' + ':id', upload.any(), form3);
+app.post('/changeinterests', upload.any(), form4)
 app.post('/', checkLogin);
 app.post('/settings', changeSettings);
 app.delete('/settings', remove)

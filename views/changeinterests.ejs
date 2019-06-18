@@ -15,7 +15,7 @@
     </header>
 
     <section id="createaccount">
-      <form action="search" method="get">
+      <form method="post" enctype="multipart/form-data">
         <fieldset>
             <% if (user) { %>
           <p>We match people based on interests. choose 6 interests, this can be anything. Think of hobbies, your favorite food, buketlists, music you like..</p>
@@ -63,7 +63,7 @@
           <input type="file" name="picture6 " accept="image/png, image/jpeg " onchange="loadFile5(event)" required><br />
           <img src="/upload/<%= data.pictures[5].filename %>" alt="interest" id="output5"><br />
         </div>
-          <input id="button" type="submit" name="login" value="Save" />
+          <input id="button" type="submit" name="login" value="Finish" />
           <% } %>
         </fieldset>
       </form>
