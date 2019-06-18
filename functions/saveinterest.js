@@ -37,9 +37,7 @@ function saveinterest(req, res) {
   function done(err, data) {
     if (err) {
       next(err)
-    } else {
-      res.redirect("search")
-    }
+    } else {}
   }
 }
 
