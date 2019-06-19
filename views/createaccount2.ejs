@@ -19,7 +19,7 @@
     <section id="createaccount">
       <form method="post" enctype="multipart/form-data">
         <% include partials/form %>
-          <label for="profilepicture">Choose a profile picture</label>
+          <label for="profilepicture">Choose a profile picture</label><br />
           <input type="file" id="profilepicture" name="profilepicture" accept="image/png, image/jpeg" onchange="loadFile(event)" required><br />
           <div id="uploadphoto"></div>
           <input id="button" type="submit" name="login" value="Next step" />

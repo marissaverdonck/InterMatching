@@ -20,18 +20,48 @@ mongo.MongoClient.connect(url, function(err, client) {
 });
 
 // Function
-function remove(req, res, next) {
-  var id = req.session.user.id
-  db.collection('data').findByIdAndRemove({_id: id}, done)
+function remove(req, res) {
+  if (!req.session.user){
+
+    return res.redirect('/')
+  }
+  else {
+          req.checkBody('confirm', "Please confirm you want to delete your account").notEmpty();
+
+          var errors = req.validationErrors();
+
+      if (errors) {
+        res.render('deleteAcc', {
+            errors: errors,
+            user: req.session.user,
+            title: "Delete account"
+        });
+      } else {
+      var sessionID = req.session.user;
+      var accountID = sessionID.id;
+      var ObjectID = require('mongodb').ObjectID;
+
+      db.collection('data').remove(
+        { _id: ObjectID(accountID) }
+      , done);
+
+      }
 }
-function done(err, data) {
-  if (err) {
-    next(err)
-  } else {
-      res.render('/')
+
+  function done(err, data) {
+    if (err) {
+      next(err)
+    } else {
+        req.session.destroy(function(err) {
+          if (err) {
+            next(err);
+          } else {
+              setTimeout(function () {
+                res.redirect('/');
+              }, 3000);
+          }
+        })
+    }
   }
 }
-
-
-
 module.exports = remove;

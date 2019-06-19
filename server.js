@@ -31,17 +31,17 @@ app.use(function(req, res, next) {
 // Express validator middleware
 app.use(expressValidator({
   errorFormatter: function(param, msg, value) {
-    let namespace = param.split('.')
-    , root = namespace.shift()
-    , formParam = root;
+    let namespace = param.split('.'),
+      root = namespace.shift(),
+      formParam = root;
 
-    while(namespace.lenght) {
+    while (namespace.lenght) {
       formParam += '[' + namespace.shift() + ']';
     }
     return {
-      param : formParam,
-      msg : msg,
-      value : value
+      param: formParam,
+      msg: msg,
+      value: value
     };
   }
 }));
@@ -67,9 +67,11 @@ const form2 = require('./functions/form2');
 const form3 = require('./functions/form3');
 const form4 = require('./functions/form4');
 const changeSettings = require('./functions/changeSettings');
+const saveinterest = require('./functions/saveinterest');
 const notfound = require('./functions/notfound');
 const listen = require('./functions/listen');
 const remove = require('./functions/remove');
+const deleteAcc = require('./functions/deleteAcc');
 const sess = {
   resave: false,
   saveUninitialized: true,
@@ -95,13 +97,16 @@ app.get('/user1', user1);
 app.get('/itsamatch', itsamatch)
 app.get('/log-out', logout);
 app.get('/list', allusers);
+app.get('/delete-account', deleteAcc);
+app.post('/delete-account', remove);
 app.post('/createaccount1', form1);
 app.post('/createaccount2' + ':id', upload.single('profilepicture'), form2);
 app.post('/createaccount3' + ':id', upload.any(), form3);
 app.post('/changeinterests', upload.any(), form4)
 app.post('/', checkLogin);
 app.post('/settings', changeSettings);
-app.delete('/settings', remove)
+app.post('/search', saveinterest);
+
 app.use(notfound);
 app.listen(process.env.PORT);
 

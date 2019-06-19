@@ -9,46 +9,33 @@
         <div>
 
           <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
+            <a href="/profile/5d08d2f6c018d718b3f77ba2">
+              <img src="/upload/3fcafa87980d7c6558b1506945ee5c80" alt="gebruiker">
+              <p>Marissa</p>
             </a>
           </article>
 
           <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
+            <a href="/profile/5d08dcf929db6001d9c17ce3">
+              <img src="/upload/409cf66188235d9bfa47825ee462bf87" alt="gebruiker">
+              <p>Kevin</p>
             </a>
           </article>
 
           <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
+            <a href="/profile/5d08d6a2ee0dc7d58134b522">
+              <img src="/upload/ac4135e72bdad060bfc3733da81f5eab" alt="gebruiker">
+              <p>Wiebe</p>
             </a>
           </article>
 
           <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
+            <a href="/profile/5d08e02df6bc2e508098d6b8">
+              <img src="/upload/57064fc87ebbb664aa1d6971d6dc1e41" alt="gebruiker">
+              <p>Marc</p>
             </a>
           </article>
 
-          <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
-            </a>
-          </article>
-
-          <article>
-            <a href="user1">
-              <img src="images/boy_square.png" alt="gebruiker">
-              <p>Jeroen</p>
-            </a>
-          </article>
         </div>
       </section>
 
@@ -56,37 +43,37 @@
         <h3> Interests</h3>
         <p> We create matches with interests. Which interests does your dream match have? Choose the one you like and get matched! </p>
 
-        <article>
-          <img src="images/climbing.png" alt="interest climbing" class="interest">
-          <h4>Climbing</h4>
-          <div>
-            <input name="like" id="like" type="radio" value="like" />
-            <input name="like" id="dislike" type="radio" value="dislike" />
-          </div>
-        </article>
 
         <% for (var l = 0; l < data.length; l++) {%>
           <% var user = data[l]; %>
 
-          <% if (user.interests != null) {%>
-            <% for (var i = 0; i < user.interests.length; i++) {%>
-              
-              <article>
-                <!-- <%= user.pictures[i].path %> -->
-                <img src="https://loremflickr.com/320/240" alt="interest climbing" class="interest">
-                
-                <h4><%= user.interests[i] %></h4>
-                <div>
-                  <input name="like" id="like" type="radio" value="like" />
-                  <input name="like" id="dislike" type="radio" value="dislike" />
-                </div>
-              </article>
-            <% } %>
-          <% } %>
-         
-      <% } %>
 
-    
+            <% if (user.interests != null) {%>
+              <% for (var i = 0; i < user.interests.length; i++) {%>
+
+
+
+
+                <article>
+                  <!-- <%= user.pictures[i].path %> -->
+
+                  <img src="/upload/<%= user.pictures[i].filename %>" alt="" class="interest">
+
+                  <h4>
+                    <%= user.interests[i] %>
+                  </h4>
+                  <div>
+                    <form method="post" action="/search">
+                      <input name="like[]" id="like" type="radio" value="<%= user._id %>" onClick="this.form.submit()" />
+                      <input name="like[]" id="dislike" type="radio" value="dislike" />
+                    </form>
+                  </div>
+                </article>
+                <% } %>
+                  <% } %>
+                    <% } %>
+
+
 
       </section>
 
@@ -98,7 +85,7 @@
 
       </section>
 
-
+      <script type="text/javascript" src="/script/index.js"></script>
 
       <!-- <script type="text/javascript" src="/server.js"></script>
       <script type="text/javascript" src="script/script.js"></script> -->
