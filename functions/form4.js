@@ -21,27 +21,27 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function form4(req, res) {
-  var id = req.session.user;
-  // var id = req.params.id
-  db.collection('data').updateOne({
-      _id: new mongo.ObjectID(id)
-    }, {
-      $set: {
-        interests: req.body.interest,
-        pictures: req.files,
-      },
-    },
-    done)
-
-  function done(err, data) {
-    if (err) {
-      next(err)
-    } else {
-      //Redirects the browser to the given path
-      res.redirect('/profile')
-      console.log(id)
-    }
-  }
-}
+  var id = req.session.user.id;
+   db.collection('data').updateMany({
+     _id: new mongo.ObjectID(id)
+     }, {
+       $set: {
+         interests: req.body.interest,
+         pictures: req.files,
+       },
+     },
+     done)
+ 
+   function done(err, data) {
+     if (err) {
+       next(err)
+     } else {
+       //Redirects the browser to the given path
+       res.redirect('/profile')
+       console.log(id)
+     }
+   }
+ }
 
 module.exports = form4;
+

@@ -21,9 +21,8 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function changeSettings(req, res) {
-  // var id = req.session.user._id;
-  var id = req.params.id
-  db.collection('data').update({
+  var id = req.session.user.id;
+  db.collection('data').updateMany({
       _id: new mongo.ObjectID(id)
     }, {
       $set: {
