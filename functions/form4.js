@@ -20,27 +20,28 @@ mongo.MongoClient.connect(url, function(err, client) {
 });
 
 // Function
-function changeinterests(req, res) {
-  if(req.session.user) {
-    var id = req.session.user.id
-    db.collection('data').findOne({
-      _id: mongo.ObjectID(id)
-    }, done)
-} else {
-    res.redirect('/')
-}
-function done(err, data) {
-  if (err) {
-    next(err)
-  } else {
-    if(req.session.user) {
-      res.render('changeinterests', { data: data, user: req.session.user, title: "Search for Interests" });
-    }
-    else {
-      res.render('/profile')
-  }
-}
-}
-}
+function form4(req, res) {
+  var id = req.session.user.id;
+   db.collection('data').updateMany({
+     _id: new mongo.ObjectID(id)
+     }, {
+       $set: {
+         interests: req.body.interest,
+         pictures: req.files,
+       },
+     },
+     done)
+ 
+   function done(err, data) {
+     if (err) {
+       next(err)
+     } else {
+       //Redirects the browser to the given path
+       res.redirect('/profile')
+       console.log(id)
+     }
+   }
+ }
 
-module.exports = changeinterests;
+module.exports = form4;
+
