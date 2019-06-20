@@ -1,4 +1,6 @@
 // Create account 2, profile picture 
+var uploader = document.querySelector("form input[id='profilepicture']");
+
 var upload = function() {
   var uploadphoto = document.getElementById("uploadphoto");
   if (uploadphoto) {
@@ -68,8 +70,12 @@ var loadFile5 = function(event) {
   reader.readAsDataURL(event.target.files[0]);
 }
 
-upload()
-  //Bron: https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
+upload();
+uploader.addEventListener('change', loadFile);
+
+
+
+//Bron: https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
 
 /* 
 var remove = document.getElementById('js-remove')
