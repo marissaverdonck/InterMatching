@@ -27,15 +27,33 @@ function search(req, res) {
     return res.redirect('/')
 
   } else {
-    db.collection('data').find().toArray(done);
+    var accountData;
+    var allData;
+    db.collection('data').find().toArray(part2);
+    function part2(err, data) {
+        allData = data;
+        db.collection('data').findOne({
+          _id: mongo.ObjectID(req.session.user.id)
+        }, done)
+    }
   }
 
   function done(err, data) {
     if (err) {
       next(err)
     } else {
+      accountData = data;
+      for (let i = 0; i < accountData.matches.length; i++) {
+        accountData.matches[i] = allData.find(findMatches);
+          function findMatches(match) {
+          return match._id == accountData.matches[i];
+        }
+      }
+      console.log(accountData)
+
       res.render('search', {
-        data: data,
+        data: allData,
+        acc: accountData,
         user: req.session.user,
         title: "Search for Interests"
       });
