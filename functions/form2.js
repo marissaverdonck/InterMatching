@@ -34,6 +34,7 @@ function form2(req, res) {
         agefrom: req.body.agefrom,
         agetill: req.body.agetill,
         profilepicture: req.file ? req.file.filename : null,
+        matches: [],
       },
     },
     done)
