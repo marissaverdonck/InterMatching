@@ -93,7 +93,7 @@ app.get('/createaccount2' + ':id', createaccount2)
 app.get('/createaccount3' + ':id', createaccount3)
 app.get('/changeinterests', changeinterests)
 app.get('/user1', user1);
-app.get('/itsamatch', itsamatch);
+app.get('/itsamatch/:id', itsamatch);
 app.get('/log-out', logout);
 app.get('/list', allusers);
 app.get('/delete-account', deleteAcc);

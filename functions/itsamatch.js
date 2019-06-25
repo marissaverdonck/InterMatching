@@ -20,13 +20,23 @@ mongo.MongoClient.connect(url, function(err, client) {
 });
 // Function
 function itsamatch(req, res) {
-  if (!req.session.user){
-  
+  if (!req.session.user) {
+
     return res.redirect('/')
+  } else {
+    var id = req.params.id
+    db.collection('data').findOne({
+      _id: mongo.ObjectID(id)
+    }, done)
+
+    function done(err, data) {
+      if (err) {
+        next(err)
+      } else {
+        res.render('itsamatch', { data: data, id: id, user: req.session.user, title: "Account page" });
+      }
+    }
   }
-  else {
-  res.render('itsamatch', {user: req.session.user});
-}
 }
 
 module.exports = itsamatch;
