@@ -24,23 +24,79 @@ mongo.MongoClient.connect(url, function(err, client) {
 
 // Function
 function saveinterest(req, res) {
-  var id = req.session.user.id
+  var sessID = req.session.user.id;
+  var interestid = req.body.like;
+  var likedData;
+  var accData;
   db.collection('data').update({
-      _id: new mongo.ObjectID(id)
+      _id: new mongo.ObjectID(sessID)
     }, {
       $push: {
-        like: req.body.like,
+        like: interestid,
       },
     },
-    done)
+    isitamatch)
+
+  function isitamatch(req, res) {
+    console.log("hallo")
+    db.collection('data').findOne({
+      _id: mongo.ObjectID(interestid)
+    }, part2)
+
+    function part2(err, data) {
+      if (err) {
+        next(err)
+      } else {
+        likedData = data;
+        var likedArray = Object.values(likedData.like)
+        var size = Object.keys(likedArray).length;
+        console.log(likedArray[1])
+        for (var i = 0; i < size; i++) {
+          console.log(i)
+          if (sessID == likedData.like[i]) {
+            db.collection('data').updateOne({
+                _id: new mongo.ObjectID(sessID),
+                matches: { $ne: interestid }
+              }, {
+                $push: {
+                  matches: interestid,
+                },
+              },
+              part3)
+            break;
+          } else {
+            console.log('no match')
+          }
+        }
+      }
+    }
+
+    function part3(err, data) {
+      if (err) {
+        next(err)
+      } else {
+        db.collection('data').updateOne({
+            _id: new mongo.ObjectID(likedData._id),
+            matches: { $ne: sessID }
+          }, {
+            $push: {
+              matches: sessID,
+            },
+          },
+          done)
+      }
+    }
+  }
+
 
   function done(err, data) {
     if (err) {
       next(err)
-    } else {}
+    } else {
+      console.log("Gelukt!")
+    }
   }
+
+
 }
-
-
-
 module.exports = saveinterest;

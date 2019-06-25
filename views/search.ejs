@@ -7,18 +7,20 @@
       <section id="matches" class="show">
         <h3>Matches</h3>
         <div>
+          <% if (acc.matches) { %>
             <% if (acc.matches.lenght != 0) { %>
-                <% for (var l = 0; l < acc.matches.length; l++) {%>
-                    <article>
-                      <a href="/profile/<%= acc.matches[l]._id %>">
+              <% for (var l = 0; l < acc.matches.length; l++) {%>
+                <article>
+                  <a href="/profile/<%= acc.matches[l]._id %>">
                         <img src="/upload/<%= acc.matches[l].profilepicture %>" alt="<%= acc.matches[l].name %>'s foto'">
                         <p><%= acc.matches[l].name %></p>
                       </a>
-                    </article>
+                </article>
                 <% } %>
-            <% } else { %>
-                No matches
-            <% } %>
+                  <% } %>
+                    <% } else { %>
+                      No matches
+                      <% } %>
         </div>
       </section>
 

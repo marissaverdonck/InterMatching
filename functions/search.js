@@ -30,11 +30,12 @@ function search(req, res) {
     var accountData;
     var allData;
     db.collection('data').find().toArray(part2);
+
     function part2(err, data) {
-        allData = data;
-        db.collection('data').findOne({
-          _id: mongo.ObjectID(req.session.user.id)
-        }, done)
+      allData = data;
+      db.collection('data').findOne({
+        _id: mongo.ObjectID(req.session.user.id)
+      }, done)
     }
   }
 
@@ -45,12 +46,11 @@ function search(req, res) {
       accountData = data;
       for (let i = 0; i < accountData.matches.length; i++) {
         accountData.matches[i] = allData.find(findMatches);
-          function findMatches(match) {
+
+        function findMatches(match) {
           return match._id == accountData.matches[i];
         }
       }
-      console.log(accountData)
-
       res.render('search', {
         data: allData,
         acc: accountData,
