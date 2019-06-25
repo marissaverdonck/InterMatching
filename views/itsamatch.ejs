@@ -6,54 +6,18 @@
       <img src="/images/logo.png">
     </section>
 
-    <section id="match">
-      <h4>This is what you like about each other</h4>
-      <article>
-        <img src="images/climbing.png" alt="interest climbing" class="interest">
-        <h4>Climbing</h4>
-      </article>
-
-      <article>
-        <img src="images/ski.png" alt="interest ski" class="interest">
-        <h4>Ski</h4>
-      </article>
-
-      <article>
-        <img src="images/cooking.png" alt="interest cooking" class="interest">
-        <h4>Cooking</h4>
-      </article>
-
-      <article>
-        <img src="images/mounteverest.png" alt="mount everest" class="interest">
-        <h4>Climb Mount everest</h4>
-      </article>
-
-      <article>
-        <img src="images/dog.png" alt="interest dogs" class="interest">
-        <h4>Dogs</h4>
-      </article>
-
-      <article>
-        <img src="images/code.png" alt="interest code" class="interest">
-        <h4>Code</h4>
-      </article>
-    </section>
     <section id="names">
       <article>
-        <img src="images/jeroenvierkant.jpg" alt="gebruiker">
-        <p>name</p>
-      </article>
-
-      <article>
-        <img src="images/girl_square.jpg" alt="gebruiker">
-        <p>name</p>
+        <img src="/upload/<%= data.profilepicture %>" alt="gebruiker">
+        <p>
+          <%= data.name %>
+        </p>
       </article>
     </section>
     <section id="matchlaststep">
-      <a href="user1"> <button> See profile</button></a>
-      <a href="user1"> Back</a>
+      <a href="/profile/<%= data._id%>"> <button> See profile</button></a>
+      <a href="javascript:history.back()"> Back</a>
     </section>
-
 
 
   </body>

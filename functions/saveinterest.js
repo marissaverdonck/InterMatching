@@ -94,6 +94,7 @@ function saveinterest(req, res) {
       next(err)
     } else {
       console.log("Gelukt!")
+      res.redirect('/itsamatch/' + likedData._id)
     }
   }
 
